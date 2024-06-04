@@ -1,7 +1,10 @@
 :root {
     --mar: hsl(18, 75%, 15%);
     --red: hsl(18, 75%, 26%);
-    --gold: hsl(39, 23%, 49%);
+    --god: hsl(39, 23%, 49%);
+    --wit: hsl(39, 23%, 90%);
+    --bg-red: linear-gradient(45deg, var(--wit), var(--god) 100%);
+    --bg-god: linear-gradient(45deg, var(--god), var(--wit) 100%);
 
 }
 * {
@@ -14,7 +17,7 @@ body {
     width: 100vw;
 }
 header ul {
-    margin: 1rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -24,7 +27,7 @@ header ul li {
 }
 section {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
@@ -32,17 +35,18 @@ section {
     justify-content: center;
 }
 button {
-    background: linear-gradient(45deg, var(--mar), var(--red), var(--mar));
+    background: linear-gradient(var(--mar), var(--red));
     padding: 1rem 2rem;
     border-radius: .5rem;
     border: none;
-    color: var(--gold);
+    color: var(--god);
 }
 button:hover {
     scale: .9;
     color: white;
 }
 #a4 {
+    page-break-after: always;
     width: 21cm;
     height: 29.7cm;
     display: flex;
@@ -108,5 +112,34 @@ p:nth-child(even) {
 @media print {
     header, h1, h2, h3, .btn, #inputText  {
         display: none;
+    }
+}
+.bg {
+    position: relative;
+}
+.one {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background: var(--mar);
+    background: var(--bg-red);
+}
+.two {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background: var(--god);
+    background: var(--bg-god);
+    animation: gradient 5s ease-in-out infinite;
+}
+@keyframes gradient {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
     }
 }
