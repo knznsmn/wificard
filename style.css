@@ -8,13 +8,14 @@ body {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+		align-content: center;
 }
 #a4Container {
     width: 21cm;
     height: 29.7cm;
     border: 1px dashed #000;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 2px;
     box-sizing: border-box;
