@@ -7,15 +7,16 @@ body {
     font-family: Arial, sans-serif;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 }
 #a4Container {
     width: 21cm;
     height: 29.7cm;
-    border: 1px solid #000;
+    border: 1px dashed #000;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 2px;
     box-sizing: border-box;
 }
 btns {
@@ -30,7 +31,7 @@ btns {
 		flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 1px;
     box-sizing: border-box;
     font-size: 18px;
     font-weight: bold;
@@ -61,7 +62,7 @@ p:nth-child(even) {
 }
 /* Hide the print button when printing */
 @media print {
-    #print {
+    h1, h2, h3, .btns  {
         display: none;
     }
 }
