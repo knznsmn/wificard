@@ -1,6 +1,8 @@
 // Elements Query
 const start = document.getElementById('start'),
-      print = document.getElementById('print');
+      print = document.getElementById('print'),
+			duration = document.getElementById('duration'),
+			access = document.getElementById('access');
 
 function extractNumbers() {
     // Get the input text
@@ -22,7 +24,17 @@ function extractNumbers() {
     matches.forEach(number => {
         const card = document.createElement('div');
         card.className = 'card';
-        card.textContent = number;
+        card.innerHTML = `<img src="./assets/img/wifi.png" alt="Wifi icon">
+	  <img src="./assets/img/logo.png" alt="AMHA logo">
+	  <div class="data">
+			<p class="label">Network Name:</p>
+			<p>AMHA-GUEST</p>
+	  </div>
+		<div class="data">
+			<p class="label">Password:</p>
+	 		<p id="password">${number}</p>
+		</div>
+		<p>1<span id="access">${duration.value}</span> access for 5 devices</p>`;
         a4Container.appendChild(card);
     });
 
@@ -36,6 +48,5 @@ function printContainer() {
 
 
 // MAIN()
-
 start.addEventListener('click', extractNumbers);
 print.addEventListener('click', printContainer);

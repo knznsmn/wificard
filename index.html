@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Paste your text below</h1>
-<textarea id="inputText" rows="10" cols="50"></textarea>
-<br>
-<button id="start">Start</button>
-<button id="print">Print</button>
-<h2>Extracted Numbers:</h2>
-<div id="a4Container"></div>
-<div class="card">
-  <img src="./assets/img/wifi.png" alt="Wifi icon">
-  <img src="./assets/img/logo.png" alt="AMHA logo">
-  <p class="label">Network Name</p>
-  <p>Amha-Guest</p>
-  <p class="label">Password</p>
-  <p id="password"></p>
-</div>
-
-<script src="main.js"></script>
+	<h1>Paste your text below</h1>
+	<textarea id="inputText" rows="10" cols="50"></textarea>
+	<br>
+	<div class="btns">
+			<label for="duration">Access duration:</label>
+	<select name="duration" id="duration">
+    <option value="day">Day</option>
+    <option value="week">Week</option>
+    <option value="month">Month</option>
+  </select>
+	<button id="start">Start</button>
+	<button id="print">Print</button>
+	</div>
+	
+	<h2>Extracted Numbers:</h2>
+	<div id="a4Container"></div>
+	<div class="card">
+	</div>
+	
+	<script src="main.js"></script>
 </body>
 </html>

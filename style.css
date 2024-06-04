@@ -1,5 +1,13 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 }
 #a4Container {
     width: 21cm;
@@ -10,17 +18,46 @@ body {
     padding: 10px;
     box-sizing: border-box;
 }
+btns {
+	display: flex;
+}
 .card {
+	  position: relative;
     width: 5cm;
     height: 3.5cm;
     border: 1px solid #000;
     display: flex;
+		flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 5px;
     box-sizing: border-box;
     font-size: 18px;
     font-weight: bold;
+}
+img:nth-child(1) {
+	position: absolute;
+	z-index: -1;
+	height: 95%;
+	width: auto;
+	opacity: .05;
+}
+img:nth-child(2) {
+	width: 25%;
+}
+p {
+	font-size: 10px;
+}
+p:nth-child(even) {
+	padding: 5px;
+}
+.data {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+.label {
+	text-transform: uppercase;
 }
 /* Hide the print button when printing */
 @media print {
