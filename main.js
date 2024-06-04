@@ -1,8 +1,12 @@
 // Elements Query
 const start = document.getElementById('start'),
       print = document.getElementById('print'),
-			duration = document.getElementById('duration'),
-			access = document.getElementById('access');
+      duration = document.getElementById('duration'),
+      access = document.getElementById('access'),
+      main = document.getElementById('main'),
+      box = document.getElementById('inputText'),
+      btn = document.querySelector('.btn'),
+      h1 = document.getElementsByTagName('h1')[0];
 
 function extractNumbers() {
     // Get the input text
@@ -15,10 +19,11 @@ function extractNumbers() {
     const matches = inputText.match(regex) || [];
 
     // Get the A4 container element
-    const a4Container = document.getElementById('a4Container');
+    const a4 = document.createElement('div');
+    a4.setAttribute('id', 'a4');
 
     // Clear any existing cards
-    a4Container.innerHTML = '';
+    a4.innerHTML = '';
 
     // Populate the container with cards
     matches.forEach(number => {
@@ -35,7 +40,13 @@ function extractNumbers() {
 	 		<p id="password">${number}</p>
 		</div>
 		<p>1 <span id="access">${duration.value}</span> access for 5 devices</p>`;
-        a4Container.appendChild(card);
+        start.classList.add('hidden');
+        box.classList.add('hidden')
+        btn.classList.add('hidden');
+        h1.textContent = 'Print the bitch!'
+        print.classList.remove('hidden');
+        main.appendChild(a4);
+        a4.appendChild(card);
     });
 
     // Optional: Log the matches array to the console

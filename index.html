@@ -7,21 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Paste the entire clipboard here:</h1>
-    <textarea id="inputText" rows="10" cols="50"></textarea>
-    <br>
-    <div class="btns">
-	<label for="duration">Access duration:</label>
-	<select name="duration" id="duration">
-            <option value="day">Day</option>
-            <option value="week">Week</option>
-            <option value="month">Month</option>
-        </select>
-	<button id="start">Start</button>
-	<button id="print">Print</button>
-    </div>
-    <h2>Extracted Numbers:</h2>
-    <div id="a4Container"></div>
+    <header>
+        <ul>
+            <li>AMHA</li>
+            <li>Github</li>
+        </ul>
+    </header>
+    <section>
+        <h1>Paste the entire clipboard here:</h1>
+        <label for="inputText"></label><textarea id="inputText" rows="10" cols="50"></textarea><br>
+        <div class="btn">
+            <label for="duration">Access duration:</label>
+            <select name="duration" id="duration">
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month">Month</option>
+            </select>
+        </div>
+            <button id="start">Start</button>
+            <button id="print" class="hidden">Print</button>
+        <main id="main">
+            <!--        <div id="a4" class="hidden"></div>-->
+        </main>
+
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
