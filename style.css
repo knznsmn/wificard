@@ -63,7 +63,7 @@ p:nth-child(even) {
 }
 /* Hide the print button when printing */
 @media print {
-    h1, h2, h3, .btns, #inputText,   {
+    h1, h2, h3, .btns, textarea  {
         display: none;
     }
 }
