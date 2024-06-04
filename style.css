@@ -1,14 +1,14 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
     font-family: Arial, sans-serif;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 #a4Container {
     width: 21cm;
@@ -20,13 +20,13 @@ body {
     box-sizing: border-box;
 }
 #inputText {
-	width: 50%;
+    width: 50%;
 }
-btns {
-	display: flex;
+.btns {
+    display: flex;
 }
 .card {
-	  position: relative;
+    position: relative;
     width: 5cm;
     height: 3.5cm;
     border: 1px solid #000;
@@ -40,28 +40,28 @@ btns {
     font-weight: bold;
 }
 img:nth-child(1) {
-	position: absolute;
-	z-index: -1;
-	height: 95%;
-	width: auto;
-	opacity: .05;
+    position: absolute;
+    z-index: -1;
+    height: 95%;
+    width: auto;
+    opacity: .05;
 }
 img:nth-child(2) {
-	width: 25%;
+    width: 25%;
 }
 p {
-	font-size: 10px;
+    font-size: 10px;
 }
 p:nth-child(even) {
-	padding: 5px;
+    padding: 5px;
 }
 .data {
-	display: flex;
-	align-items: center;
-	justify-content: start;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 .label {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 /* Hide the print button when printing */
 @media print {
