@@ -34,7 +34,7 @@ function extractNumbers() {
 			<p class="label">Password:</p>
 	 		<p id="password">${number}</p>
 		</div>
-		<p>1<span id="access">${duration.value}</span> access for 5 devices</p>`;
+		<p>1 <span id="access">${duration.value}</span> access for 5 devices</p>`;
         a4Container.appendChild(card);
     });
 
