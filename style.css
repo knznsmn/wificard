@@ -47,7 +47,7 @@ i {
 body {
     font-family: Arial, sans-serif;
     width: 100vw;
-    overflow-y: hidden;
+    overflow: hidden;
     color: var(--mar);
 }
 header ul {
