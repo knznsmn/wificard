@@ -14,11 +14,11 @@
 }
 @font-face {
     font-family: 'icon';
-    src:  url('assets/fonts/icon.eot?yfrb27');
-    src:  url('assets/fonts/icon.eot?yfrb27#iefix') format('embedded-opentype'),
-    url('assets/fonts/icon.ttf?yfrb27') format('truetype'),
-    url('assets/fonts/icon.woff?yfrb27') format('woff'),
-    url('assets/fonts/icon.svg?yfrb27#icon') format('svg');
+    src:  url('assets/fonts/icon.eot?se2rfs');
+    src:  url('assets/fonts/icon.eot?se2rfs#iefix') format('embedded-opentype'),
+    url('assets/fonts/icon.ttf?se2rfs') format('truetype'),
+    url('assets/fonts/icon.woff?se2rfs') format('woff'),
+    url('assets/fonts/icon.svg?se2rfs#icon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -35,13 +35,20 @@ i {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.iamha:before {
+
+.i-amha:before {
     content: "\e900";
 }
-.irepeat:before {
+.i-printer:before {
+    content: "\e901";
+}
+.i-print:before {
+    content: "\e901";
+}
+.i-repeat:before {
     content: "\e90d";
 }
-.igithub:before {
+.i-github:before {
     content: "\e907";
 }
 body {
@@ -50,19 +57,28 @@ body {
     overflow: hidden;
     color: var(--mar);
 }
-header ul {
+header {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
     flex-direction: row;
 }
 header ul li {
     list-style: none;
     font-size: 1.5rem;
 }
+header .tools {
+    display: flex;
+
+}
+i.i-printer {
+    color: var(--god);
+    margin-right: 1rem;
+}
 section {
     width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
     margin: auto;
     flex-direction: column;
@@ -81,6 +97,10 @@ button {
 button:hover {
     scale: .9;
     color: white;
+}
+main#main {
+    height: 100%;
+    overflow: visible !important;
 }
 a:link, a:visited {
     text-decoration: none;
@@ -112,6 +132,7 @@ img#signature {
     height: 100%;
     position: absolute;
     opacity: 0.05;
+    z-index: -1;
 }
 #inputText {
     background: hsla(39, 23%, 80%, 0.2);
@@ -182,14 +203,26 @@ p:nth-child(even) {
 .hidden {
     display: none;
 }
+footer {
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    bottom: 1rem;
+}
 /* Hide the print button when printing */
 @media print {
     @page {
         size: auto;
         margin: 0 auto;
     }
-    header, h1, h2, h3, button, .btn, #inputText {
-        display: none;
+    body * {
+        visibility: hidden;
+    }
+    #a4, #a4 * {
+        visibility: visible;
+        left: 0;
+        top: 0;
     }
 }
 .bg {
