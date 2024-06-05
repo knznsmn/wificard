@@ -9,23 +9,18 @@ const start = document.getElementById('start'),
       h1 = document.getElementsByTagName('h1')[0];
 
 function extractNumbers() {
-    // Get the input text
+
     const inputText = document.getElementById('inputText').value;
 
-    // Regular expression to match numbers with 5 to 6 digits
     const regex = /\b\d{5,6}\b/g;
 
-    // Find all matches
     const matches = inputText.match(regex) || [];
 
-    // Get the A4 container element
     const a4 = document.createElement('div');
     a4.setAttribute('id', 'a4');
 
-    // Clear any existing cards
     a4.innerHTML = '';
 
-    // Populate the container with cards
     matches.forEach(number => {
         const card = document.createElement('div');
         card.className = 'card';
@@ -43,7 +38,7 @@ function extractNumbers() {
         start.classList.add('hidden');
         box.classList.add('hidden')
         btn.classList.add('hidden');
-        h1.textContent = 'Print the bitch!'
+        h1.textContent = 'Good job. Now print it!'
         print.classList.remove('hidden');
         main.appendChild(a4);
         a4.appendChild(card);
