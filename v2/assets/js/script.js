@@ -46,7 +46,7 @@ function extractNumbers() {
             card.className = 'card';
             card.innerHTML = `<img id="card-logo" src="assets/img/logo.png" alt="AMHA logo">
                                 <p class="small">AMHA-GUEST</p>
-                                <p class="heavy">Access Code: ${number}</p>
+                                <p class="small">Access Code:<span class="heavy"> ${number}</span></p>
                                 <p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
 
             page.appendChild(card);
