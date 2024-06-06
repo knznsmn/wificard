@@ -53,6 +53,7 @@ i {
 body {
     font-family: Arial, sans-serif;
 		background: var(--bg-god);
+		background: url(../img/bg.jpg) repeat;
 }
 section:nth-child(1) {
     display: flex;
