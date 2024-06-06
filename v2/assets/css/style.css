@@ -219,7 +219,7 @@ button:hover {
     }
     .page:last-child .card {
     }
-    section .footer {
+    section .footer, #creat {
         visibility: hidden;
     }
 }

@@ -6,7 +6,7 @@ const $ = {
     h1: document.getElementsByTagName('h1')[0],
     menu: document.getElementsByTagName('header')[0],
     text: document.getElementsByTagName('textarea')[0],
-    butt:document.getElementsByTagName('button')[0],
+    creat: document.getElementById('creat'),
     drop: document.querySelector('.drop'),
 }
 const btn = {
@@ -20,12 +20,15 @@ function toggleHide() {
             $[key].classList.add('hide');
         }
     }
-    fbut.classList.remove('hide');fbut.classList.remove('hide');
+
 }
-function extractNumbers() {
+function extract() {
     const inputText = document.getElementById('inputText').value;
     const regex = /\b\d{5,6}\b/g;
-    const matches = inputText.match(regex) || [];
+    return inputText.match(regex) || [];
+}
+function extractNumbers() {
+    const matches = extract();
 
     // Get the A4 container element
     const a4 = document.createElement('div');
@@ -65,6 +68,16 @@ document.addEventListener('click', function (e) {
     console.log(`Click target is ${e.target}`);
     switch (e.target.id) {
         case 'start':
+            const matches = extract();
+            $.text.classList.add('hidden');
+            $.h1.textContent = `Found ${matches.length} access codes`;
+            setInterval(() => {
+                $.h1.textContent = `Press the button to generate the cards`;
+                btn.start.classList.add('hide');
+                $.creat.classList.remove('hide');
+            }, 2000);
+            break;
+        case 'creat':
             extractNumbers();
             toggleHide();
             break;
