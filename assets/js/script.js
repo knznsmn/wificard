@@ -7,6 +7,7 @@ const $ = {
     menu: document.getElementsByTagName('header')[0],
     text: document.getElementsByTagName('textarea')[0],
     drop: document.querySelector('.drop'),
+		img: document.getElementById('signature'),
 }
 const btn = {
     print: document.getElementById('print'),
