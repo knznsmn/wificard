@@ -122,6 +122,7 @@ textarea::placeholder, .drop::placeholder {
 }
 select, option {
     background: transparent;
+    padding: .5rem;
 }
 button {
     background: linear-gradient(var(--mar), var(--red));
@@ -226,6 +227,7 @@ img#signature {
         visibility: visible;
         margin: auto;
         background: white;
+        color: black;
     }
     .page:last-child .card {
     }
