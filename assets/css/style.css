@@ -251,10 +251,12 @@ img#signature {
 @media print {
     body * {
         visibility: hidden;
+				background: white;
     }
     div#a4 * {
         visibility: visible;
         margin: auto;
+				background: white;
     }
     .page:last-child .card {
     }
