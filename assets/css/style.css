@@ -247,7 +247,7 @@ img#signature {
     }
 	}
 
-/* Hide the print button when printing */
+/* Hide the irrelevant elements when printing */
 @media print {
     body, body * {
         visibility: hidden;

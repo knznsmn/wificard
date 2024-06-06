@@ -24,7 +24,7 @@ function toggleHide() {
 }
 function extract() {
     const inputText = document.getElementById('inputText').value;
-    const regex = /\b\d{5,6}\b/g;
+    const regex = /\b\d{6}\b/g;
     return inputText.match(regex) || [];
 }
 function extractNumbers() {
