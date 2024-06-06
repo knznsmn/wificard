@@ -199,7 +199,7 @@ button:hover {
     margin-bottom: 5px;
 }
 .page:last-child {
-    align-content: flex-start;
+    /*align-content: flex-start;*/
 
 }
 .page:last-child .card {
