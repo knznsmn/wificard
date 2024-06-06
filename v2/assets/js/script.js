@@ -6,7 +6,6 @@ const $ = {
     h1: document.getElementsByTagName('h1')[0],
     menu: document.getElementsByTagName('header')[0],
     text: document.getElementsByTagName('textarea')[0],
-    creat: document.getElementById('creat'),
     drop: document.querySelector('.drop'),
 }
 const btn = {
@@ -71,15 +70,19 @@ document.addEventListener('click', function (e) {
             const matches = extract();
             $.text.classList.add('hidden');
             $.h1.textContent = `Found ${matches.length} access codes`;
-            setInterval(() => {
+            setTimeout(() => {
                 $.h1.textContent = `Press the button to generate the cards`;
                 btn.start.classList.add('hide');
-                $.creat.classList.remove('hide');
+                const creat = document.createElement('button');
+								creat.setAttribute('id', 'creat');
+								creat.textContent = 'Generate';
+								main.appendChild(creat);
             }, 2000);
             break;
         case 'creat':
             extractNumbers();
             toggleHide();
+						creat.classList.add('hide');
             break;
         case 'card-logo':
             printContainer();
