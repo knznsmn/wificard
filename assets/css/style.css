@@ -167,22 +167,28 @@ img#signature {
     font-size: 14px;
     font-weight: bold;
 }
-.card:before {
-    content: '';
-    background-image: url(../img/wifi.png);
-    background-size: cover;
-    background-position: center;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0.2;
-    position: absolute;
-    z-index: -1;
-}
+/*.card:before {*/
+/*    content: '';*/
+/*    background-image: url(../img/wifi.png);*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*    opacity: 0.2;*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*}*/
 .card img {
     width: 35%;
     height: auto;
+}
+#card-wifi {
+    z-index: -5;
+    position: absolute;
+    width: 100%;
+    opacity: .2;
 }
 .card p {
     margin-bottom: 5px;
@@ -206,48 +212,11 @@ img#signature {
     box-sizing: border-box;
     margin-bottom: 5px;
 }
-.page:last-child {
-    /*align-content: flex-start;*/
-
-}
-.page:last-child .card {
-
-}
 .hide {
      display: none;
 }
-/* Gradient Play */
-.bg {
-    position: relative;
-}
-.one {
-    position: absolute;
-    z-index: -20;
-    width: 100vw;
-    height: 100vh;
-    background: var(--mar);
-    background: var(--bg-red);
-}
-.two {
-    position: absolute;
-    z-index: -10;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    background: var(--god);
-    background: var(--bg-god);
-    animation: gradient 5s ease-in-out infinite;
-}
-@keyframes gradient {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-	}
 
-/* Hide the print button when printing */
+/* Hide the irrelevant elements when printing */
 @media print {
     body, body * {
         visibility: hidden;
@@ -260,7 +229,7 @@ img#signature {
     }
     .page:last-child .card {
     }
-    section .footer, #creat {
+    section footer, #creat {
         visibility: hidden;
     }
 }

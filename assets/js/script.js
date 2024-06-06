@@ -14,6 +14,15 @@ const btn = {
     start: document.getElementById('start'),
     duration: document.getElementById('duration'),
 }
+
+// Function Hall
+function just32(a) {
+    const remainder = a.length % 32;
+    if (remainder !== 0) {
+        a.splice(-remainder);
+    }
+    return a;
+}
 function toggleHide() {
     for (let key in $) {
         if ($.hasOwnProperty(key)) {
@@ -24,8 +33,8 @@ function toggleHide() {
 }
 function extract() {
     const inputText = document.getElementById('inputText').value;
-    const regex = /\b\d{5,6}\b/g;
-    return inputText.match(regex) || [];
+    const regex = /\b\d{6}\b/g;
+    return just32(inputText.match(regex) || []);
 }
 function extractNumbers() {
     const matches = extract();
@@ -46,6 +55,7 @@ function extractNumbers() {
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `<img id="card-logo" src="assets/img/logo.png" alt="AMHA logo">
+                                <img id="card-wifi" src="assets/img/wifi.png" alt="Wifi icon">
                                 <p class="small">AMHA-GUEST</p>
                                 <p class="small">Access Code:<span class="heavy"> ${number}</span></p>
                                 <p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
@@ -70,7 +80,7 @@ document.addEventListener('click', function (e) {
         case 'start':
             const matches = extract();
             $.text.classList.add('hidden');
-            $.h1.textContent = `Found ${matches.length} access codes`;
+            $.h1.textContent = `Processing ${matches.length} access codes`;
             setTimeout(() => {
                 $.h1.textContent = `Press the button to generate the cards`;
                 btn.start.classList.add('hide');
@@ -78,12 +88,12 @@ document.addEventListener('click', function (e) {
 								creat.setAttribute('id', 'creat');
 								creat.textContent = 'Generate';
 								main.appendChild(creat);
-            }, 2000);
+            }, 1000);
             break;
         case 'creat':
             extractNumbers();
             toggleHide();
-						creat.classList.add('hide');
+            creat.classList.add('hide');
             break;
         case 'card-logo':
             printContainer();
