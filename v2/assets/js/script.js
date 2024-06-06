@@ -1,9 +1,12 @@
 const main = document.getElementsByTagName('main')[0];
+      fbut = document.getElementById('print');
+      foot = document.querySelector('.footer');
+      // menu= document.getElementsByTagName('header')[0];
 const $ = {
     h1: document.getElementsByTagName('h1')[0],
     menu: document.getElementsByTagName('header')[0],
     text: document.getElementsByTagName('textarea')[0],
-    butt:document.getElementsByTagName('button')[0],
+    creat: document.getElementById('creat'),
     drop: document.querySelector('.drop'),
 }
 const btn = {
@@ -17,11 +20,15 @@ function toggleHide() {
             $[key].classList.add('hide');
         }
     }
+
 }
-function extractNumbers() {
+function extract() {
     const inputText = document.getElementById('inputText').value;
     const regex = /\b\d{5,6}\b/g;
-    const matches = inputText.match(regex) || [];
+    return inputText.match(regex) || [];
+}
+function extractNumbers() {
+    const matches = extract();
 
     // Get the A4 container element
     const a4 = document.createElement('div');
@@ -38,16 +45,18 @@ function extractNumbers() {
         pageMatches.forEach(number => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = `<img id="print" src="assets/img/logo.png" alt="AMHA logo">
+            card.innerHTML = `<img id="card-logo" src="assets/img/logo.png" alt="AMHA logo">
                                 <p class="small">AMHA-GUEST</p>
                                 <p class="heavy">Access Code: ${number}</p>
                                 <p class="small">1 ${btn.duration.value}</span> access for 5 devices</p>`;
 
             page.appendChild(card);
+            // page.appendChild(foot);
         });
 
         a4.appendChild(page);
     }
+
 }
 
 function printContainer() {
@@ -59,10 +68,20 @@ document.addEventListener('click', function (e) {
     console.log(`Click target is ${e.target}`);
     switch (e.target.id) {
         case 'start':
+            const matches = extract();
+            $.text.classList.add('hidden');
+            $.h1.textContent = `Found ${matches.length} access codes`;
+            setInterval(() => {
+                $.h1.textContent = `Press the button to generate the cards`;
+                btn.start.classList.add('hide');
+                $.creat.classList.remove('hide');
+            }, 2000);
+            break;
+        case 'creat':
             extractNumbers();
             toggleHide();
             break;
-        case 'print':
+        case 'card-logo':
             printContainer();
             break;
         case 'home':

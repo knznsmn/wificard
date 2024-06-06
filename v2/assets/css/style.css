@@ -52,11 +52,18 @@ i {
 }
 body {
     font-family: Arial, sans-serif;
+}
+section:nth-child(1) {
     display: flex;
     flex-direction: column;
-    height: 95vh;
+    height: 100vh;
     justify-content: space-between;
     align-items: center;
+}
+section .footer {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
 }
 header {
     display: flex;
@@ -103,29 +110,29 @@ a:hover {
 a:active {
     color: var(--mar);
 }
-textarea, .duration {
+textarea, .drop {
     margin: 1rem;
     padding: 1rem;
-    position: relative;
     background: hsla(39, 23%, 80%, 0.2);
     text-align: center;
 }
-textarea:focus, .duration:focus {
+textarea:focus, .drop:focus {
     background: hsla(39, 23%, 80%, 0.5);
 }
-textarea::placeholder, .duration::placeholder {
-    position: absolute;
-    margin: 0 25%;
-    top: 50%;
+textarea::placeholder, .drop::placeholder {
     text-align: center;
 }
 button {
     background: linear-gradient(var(--mar), var(--red));
     padding: 1rem 2rem;
     border-radius: .5rem;
+    border: none;
+    color: var(--god);
+    box-shadow: 0 5px 5px var(--mar);
 }
 button:hover {
     scale: .9;
+    color: var(--wit);
 
 }
 /*#a4 {*/
@@ -142,12 +149,12 @@ button:hover {
     width: 5cm;
     height: 3.5cm;
     position: relative;
-    border: 3px solid #000;
+    border: 2px solid #000;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 1px;
+    margin: 2px;
     /*box-sizing: border-box;*/
     font-size: 14px;
     font-weight: bold;
@@ -184,6 +191,7 @@ button:hover {
     width: 21cm;
     min-height: 29.7cm;
     display: flex;
+    justify-content: center;
     align-content: space-around;
     flex-wrap: wrap;
     padding: 5px;
@@ -191,10 +199,11 @@ button:hover {
     margin-bottom: 5px;
 }
 .page:last-child {
-    align-content: flex-end;
+    /*align-content: flex-start;*/
+
 }
 .page:last-child .card {
-    margin: 10px 0;
+
 }
 .hide {
      display: none;
@@ -207,5 +216,10 @@ button:hover {
     div#a4 * {
         visibility: visible;
         margin: auto;
+    }
+    .page:last-child .card {
+    }
+    section .footer, #creat {
+        visibility: hidden;
     }
 }
