@@ -213,6 +213,10 @@ img#signature {
     box-sizing: border-box;
     margin-bottom: 5px;
 }
+/* Hide ugly elements */
+::-webkit-scrollbar {
+    display: none;
+}
 .hide {
      display: none;
 }
