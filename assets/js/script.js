@@ -36,7 +36,7 @@ function extract() {
     const regex = /\b\d{5,6}\b/g;
     return just32(inputText.match(regex) || []);
 }
-function extractNumbers() {
+function cardGen() {
     const matches = extract();
 
     // Get the A4 container element
@@ -85,13 +85,13 @@ document.addEventListener('click', function (e) {
                 $.h1.textContent = `Press the button to generate the cards`;
                 btn.start.classList.add('hide');
                 const creat = document.createElement('button');
-								creat.setAttribute('id', 'creat');
-								creat.textContent = 'Generate';
-								main.appendChild(creat);
+                creat.setAttribute('id', 'creat');
+                creat.textContent = 'Generate';
+                main.appendChild(creat);
             }, 1000);
             break;
         case 'creat':
-            extractNumbers();
+            cardGen();
             toggleHide();
             creat.classList.add('hide');
             break;
