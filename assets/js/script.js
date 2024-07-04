@@ -68,7 +68,6 @@ function cardGen() {
     }
 
 }
-
 function printContainer() {
     window.print();
 }

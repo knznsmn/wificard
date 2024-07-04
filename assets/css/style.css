@@ -235,7 +235,7 @@ img#signature {
     }
     .page:last-child .card {
     }
-    section footer, #creat {
+    section footer, #pane {
         visibility: hidden;
     }
 }
